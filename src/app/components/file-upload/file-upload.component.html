@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>File Upload</mat-card-title>
+    <mat-card-content>
+      <form #fileUploadForm>
+        <input type="file" multiple (change)="onFileSelected($event)" #fileInput />
+        <mat-progress-bar *ngIf="uploading" mode="determinate" [value]="uploadProgress"></mat-progress-bar>
+        <button mat-raised-button color="primary" (click)="uploadFile()" [disabled]="!selectedFile">Upload</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
